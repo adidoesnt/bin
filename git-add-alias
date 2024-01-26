@@ -2,8 +2,11 @@
 
 # git-add-alias.sh
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 2 ] || [ "$1" = "-h" ]; then
   echo "Usage: add-alias.sh <alias-name> <script-path>"
+  echo "Add a new git alias that executes the script at the given path."
+  echo "Options:"
+  echo "  -h    Show this help message."
   exit 1
 fi
 
