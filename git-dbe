@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# git-dbe.sh
+
+# deletes branches except those specified
+
+if [ "$1" = "-h" ]; then
+  echo "Usage: git branch-del [-f] <branch1> <branch2> ..."
+  echo "Deletes all local branches except the ones specified."
+  echo "Options:"
+  echo "  -f    Force deletion of unmerged branches"
+  exit 0
+fi
+
+force=""
+if [ "$1" = "-f" ]; then
+  force="-D"
+  shift
+else
+  force="-d"
+fi
+
+branches_to_keep=$(printf "\|%s" "$@")
+branches_to_keep=${branches_to_keep:2}
+
+git branch | grep -v "$branches_to_keep" | xargs git branch $force

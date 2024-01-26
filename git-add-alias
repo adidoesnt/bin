@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# git-add-alias.sh
+
+if [ $# -ne 2 ]; then
+  echo "Usage: add-alias.sh <alias-name> <script-path>"
+  exit 1
+fi
+
+alias_name=$1
+script_path=$2
+
+if [ ! -x "$script_path" ]; then
+  echo "Error: $script_path does not exist or is not executable"
+  exit 1
+fi
+
+git config --global alias.$alias_name "!$script_path"
+
+echo "Alias added successfully: git $alias_name"
