@@ -11,5 +11,5 @@ please not that the scripts here **do not** use `.sh` extensions.
 
 # categories
 ## git
-1. git-add-alias: add a new git alias
-2. git-dbe: delete git branches except those specified
+1. `git-add-alias`: add a new git alias
+2. `git-dbe`: delete git branches except those specified
