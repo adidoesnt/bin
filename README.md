@@ -15,3 +15,4 @@ all scripts accept an `-h` option which prints the script's usage.
 ## git
 1. `git-add-alias`: add a new git alias
 2. `git-dbe`: delete git branches except those specified
+3. `queue`: create, list or delete mock AWS SQS queues
